@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Cinema club";
+
+    var mooves = new List<string>
+    {
+        "Inception - 7:00 PM",
+        "The Matrix - 9:30 PM",
+        "Interstellar - 6:00 PM",
+        "The Dark Knight - 8:45 PM"
+    };
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mooves Schedule</h1>
+    <p>
+        <a>
+            @foreach (var moove in mooves)
+            {
+                <div>@moove</div>
+            }   
+        </a>.
+    </p>
+</div>
