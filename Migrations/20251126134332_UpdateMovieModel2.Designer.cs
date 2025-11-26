@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CinemaApp.Migrations
 {
     [DbContext(typeof(CinemaDbContext))]
-    [Migration("20251125182856_UpdateMovieModel")]
-    partial class UpdateMovieModel
+    [Migration("20251126134332_UpdateMovieModel2")]
+    partial class UpdateMovieModel2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,8 +32,8 @@ namespace CinemaApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("BoxOfficeReceipts")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("BoxOfficeReceipts")
+                        .HasColumnType("int");
 
                     b.Property<string>("Country")
                         .IsRequired()

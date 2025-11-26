@@ -1,22 +1,30 @@
-﻿@{
+﻿@model List<Movie>;
+@{
     ViewData["Title"] = "Cinema club";
-
-    var mooves = new List<string>
-    {
-        "Inception - 7:00 PM",
-        "The Matrix - 9:30 PM",
-        "Interstellar - 6:00 PM",
-        "The Dark Knight - 8:45 PM"
-    };
 }
 
 <div class="text-center">
-    <h1 class="display-4">Mooves Schedule</h1>
+    <h1 class="display-4">Movies Schedule</h1>
     <p>
         <a>
-            @foreach (var moove in mooves)
+            @foreach (var movie in Model)
             {
-                <div>@moove</div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                @* <img src="@movie.PosterUrl" alt="@movie.Title Poster" width="150" /> *@
+                            </td>
+                            <td style="padding-left:20px;">
+                                <h2>@movie.Title (@movie.ReleaseYear)</h2>
+                                <p><strong>Жанр:</strong> @movie.Genre</p>
+                                <p><strong>Страна:</strong> @movie.Country</p>
+                                <p><strong>Цена билета:</strong> $@movie.Price</p>
+                                <p><strong>Кассовые сборы:</strong> $@movie.BoxOfficeReceipts</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             }   
         </a>.
     </p>

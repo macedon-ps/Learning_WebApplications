@@ -1,13 +1,16 @@
 using CinemaApp.ContextBd;
+using CinemaApp.Interfaces;
+using CinemaApp.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<CinemaContextBd>(options =>
+builder.Services.AddDbContext<CinemaDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IMovies, MoviesRepository>();
 
 var app = builder.Build();
 

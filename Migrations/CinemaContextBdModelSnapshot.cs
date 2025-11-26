@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CinemaApp.Migrations
 {
-    [DbContext(typeof(CinemaContextBd))]
+    [DbContext(typeof(CinemaDbContext))]
     partial class CinemaContextBdModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -29,8 +29,8 @@ namespace CinemaApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("BoxOfficeReceipts")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("BoxOfficeReceipts")
+                        .HasColumnType("int");
 
                     b.Property<string>("Country")
                         .IsRequired()

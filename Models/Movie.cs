@@ -14,7 +14,7 @@
 
         public decimal Price { get; set; }
 
-        public decimal BoxOfficeReceipts { get; set; }
+        public int BoxOfficeReceipts { get; set; }
 
     }
 }
